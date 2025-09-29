@@ -19,6 +19,22 @@ const CreateCourseController = async (req: Request, res: Response) => {
 
 }
 
+const GetALlCOntroller = async (req: Request, res: Response) => {
+  try {
+    const getCourses = await CourseService.GetAllCourseService()
+    res.status(201).json({
+      success: true,
+      status: 'success',
+      message: 'Get all courses successfully',
+      data: getCourses
+    })  
+  }catch (error) {
+    console.log(error);
+  }
+  
+}
+
 export const CourseController = {
-  CreateCourseController
+  CreateCourseController,
+  GetALlCOntroller
 }

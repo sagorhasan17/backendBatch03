@@ -14,7 +14,7 @@ app.use('/api/students/', StudentRoute)
 app.use('/api/user/', UserRoute)
 
 app.get('/', (req, res) => {
-  res.send('Server is Properly Runnin...!');
+  res.send('Server is Properly Running...!');
 });
 
 export default app;

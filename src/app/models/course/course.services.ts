@@ -8,6 +8,12 @@ const CreateCourseService = async (payLoad: ICourse) => {
   return course;
 }
 
+const GetAllCourseService = async () => {
+  const getCourses = await CourseModel.find({})
+  return getCourses
+}
+
 export const CourseService = {
-  CreateCourseService
+  CreateCourseService,
+  GetAllCourseService
 }
