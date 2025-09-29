@@ -1,7 +1,13 @@
-import express from 'express';
-const app = express();
+import express, { type Application } from 'express';
+import dotenv from 'dotenv';
+import { CourseRoutes } from './app/models/course/course.routes.js';
 
-const port = 3000;
+dotenv.config();
+const app:Application = express();
+
+app.use(express.json());
+
+app.use('/api/courses', CourseRoutes);
 
 app.get('/', (req, res) => {
   res.send('Hello World!');
