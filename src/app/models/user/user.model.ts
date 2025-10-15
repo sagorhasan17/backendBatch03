@@ -3,6 +3,7 @@ import type { IUser } from './user.interface.js';
 
 const userSchema = new Schema<IUser>({
   userId: { type: String, required: true },
+  password: { type: String, required: true },
   isPasswordChanged: { type: Boolean, required: true },
   role: { type: String, enum: ['admin', 'mentor', 'student'], required: true },
   status: {
