@@ -4,6 +4,7 @@ import { CourseRoutes } from './app/models/course/course.routes.js';
 import { StudentRoute } from './app/models/student/student.routes.js';
 import { UserRoute } from './app/models/user/user.routes.js';
 import { AuthRoute } from './app/models/auth/auth.route.js';
+import { EnrollmentRoutes } from './app/models/enrollment/enrollment.routes.js';
 
 dotenv.config();
 const app: Application = express();
@@ -14,6 +15,7 @@ app.use('/api/courses', CourseRoutes);
 app.use('/api/auth', AuthRoute);
 app.use('/api/students/', StudentRoute);
 app.use('/api/user/', UserRoute);
+app.use('/api/enrollments', EnrollmentRoutes);
 
 app.get('/', (req, res) => {
   res.send('Server is Properly Running...!');
